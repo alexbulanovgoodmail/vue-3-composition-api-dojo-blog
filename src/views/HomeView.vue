@@ -8,7 +8,7 @@ load()
 </script>
 
 <template>
-  <main>
+  <main class="py-8">
     <div class="container">
       <h1 class="mb-4">Home View</h1>
       <div v-if="posts.length === 0 && error === null">Loadind...</div>
