@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted, onUnmounted, onUpdated } from 'vue'
 import SinglePost from '@/components/SinglePost.vue'
 
 const props = defineProps({
@@ -6,6 +7,17 @@ const props = defineProps({
     type: Array,
     required: true
   }
+})
+
+//
+onMounted(() => {
+  console.log('[onMounted]')
+})
+onUnmounted(() => {
+  console.log('[onUnmounted]')
+})
+onUpdated(() => {
+  console.log('[onUpdated]')
 })
 </script>
 
