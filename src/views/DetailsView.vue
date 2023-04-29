@@ -1,5 +1,6 @@
 <script setup>
 import getPost from '@/composables/getPost'
+import Loader from '@/components/Loader.vue'
 
 const props = defineProps({
   id: {
@@ -19,7 +20,9 @@ load()
         <p class="title">Error</p>
         <p>{{ error }}</p>
       </div>
-      <div v-if="post === null && error === null">Loadind...</div>
+      <div v-if="post === null && error === null">
+        <Loader />
+      </div>
       <div v-else class="post">
         <div class="mb-4">
           <h1>
