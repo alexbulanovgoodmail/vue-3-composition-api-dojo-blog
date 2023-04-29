@@ -43,6 +43,7 @@ load()
     position: relative;
     display: inline-block;
     z-index: 2;
+    color: $color-white;
   }
 
   h1::after {
