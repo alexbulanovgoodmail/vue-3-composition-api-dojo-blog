@@ -1,61 +1,28 @@
 <script setup>
-import { onMounted, computed, ref, watch, watchEffect, handleError } from 'vue'
+import { ref } from 'vue'
+import PostList from '@/components/PostList.vue'
 
-console.log('[setup]')
+const posts = ref([
+  {
+    id: 1,
+    title: 'Welcome to the blog',
+    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facere ipsum numquam perferendis exercitationem! Provident quibusdam expedita harum minima ipsum sequi laboriosam consectetur vel eum omnis voluptate dolorum sint dolorem quaerat excepturi quae earum maxime, voluptas alias. Nihil quod doloribus repellat neque, quam necessitatibus labore animi dolorem porro iure, odit asperiores minus molestiae inventore ratione est expedita eveniet sunt facere nam mollitia illum corrupti ipsum vel? Reprehenderit cupiditate, quos recusandae dolorem velit quam eligendi hic iusto ab eius expedita blanditiis et est iure quae tenetur officia rem atque iste unde? Nulla quo ipsum deserunt numquam facere, cupiditate nihil eveniet odio illum ex beatae doloremque earum aperiam sed odit ea cum laudantium maxime ducimus, soluta voluptatibus atque deleniti. Corporis nisi sit vitae quisquam officiis numquam hic alias delectus tenetur! Laboriosam illo rerum qui praesentium dicta earum nemo ipsa alias ipsam odit accusamus fugiat inventore illum perferendis placeat, amet provident expedita facilis. Laborum iste dolore distinctio ab ullam, ratione quod consectetur repellendus adipisci? Distinctio illum assumenda ratione animi numquam molestiae corporis aliquam ab fugit amet accusantium, molestias aperiam omnis consequatur tempora repudiandae, hic praesentium aliquid tempore. Ratione nam tempora iste, reiciendis, cumque esse deleniti quod temporibus ipsam perspiciatis quidem optio, harum omnis?'
+  },
+  {
+    id: 2,
+    title: 'Top 5 CSS tips',
+    body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facere ipsum numquam perferendis exercitationem! Provident quibusdam expedita harum minima ipsum sequi laboriosam consectetur vel eum omnis voluptate dolorum sint dolorem quaerat excepturi quae earum maxime, voluptas alias. Nihil quod doloribus repellat neque, quam necessitatibus labore animi dolorem porro iure, odit asperiores minus molestiae inventore ratione est expedita eveniet sunt facere nam mollitia illum corrupti ipsum vel? Reprehenderit cupiditate, quos recusandae dolorem velit quam eligendi hic iusto ab eius expedita blanditiis et est iure quae tenetur officia rem atque iste unde? Nulla quo ipsum deserunt numquam facere, cupiditate nihil eveniet odio illum ex beatae doloremque earum aperiam sed odit ea cum laudantium maxime ducimus, soluta voluptatibus atque deleniti. Corporis nisi sit vitae quisquam officiis numquam hic alias delectus tenetur! Laboriosam illo rerum qui praesentium dicta earum nemo ipsa alias ipsam odit accusamus fugiat inventore illum perferendis placeat, amet provident expedita facilis. Laborum iste dolore distinctio ab ullam, ratione quod consectetur repellendus adipisci? Distinctio illum assumenda ratione animi numquam molestiae corporis aliquam ab fugit amet accusantium, molestias aperiam omnis consequatur tempora repudiandae, hic praesentium aliquid tempore. Ratione nam tempora iste, reiciendis, cumque esse deleniti quod temporibus ipsam perspiciatis quidem optio, harum omnis?'
+  }
+])
 
 const caption = ref('Home View')
-const search = ref('')
-const names = ref(['mario', 'luigi', 'toad', 'yoshi', 'koopa', 'peach', 'bowser'])
-
-const matchingNames = computed(() => {
-  return names.value.filter((name) => name.includes(search.value))
-})
-
-const stopWatch = watch(search, () => {
-  console.log('[watch function]')
-})
-const stopEffect = watchEffect(() => {
-  console.log('[watchEffect]', search.value)
-})
-
-//
-onMounted(() => {
-  console.log('[onMounted]')
-})
-//
-function handleStopWatching(params) {
-  stopWatch()
-  stopEffect()
-}
 </script>
 
 <template>
   <main>
     <div class="container">
-      <h1>{{ caption }}</h1>
-
-      <div class="my-6">
-        <div class="nes-field">
-          <label for="name_field">name</label>
-          <input v-model="search" type="text" id="name_field" class="nes-input" />
-        </div>
-      </div>
-      <div class="my-6">
-        <p v-for="(name, index) in matchingNames" :key="index">
-          {{ name }}
-        </p>
-      </div>
-      <div class="my-6">
-        <button class="nes-btn is-warning" type="button" @click="handleStopWatching">
-          Stop Watching
-        </button>
-      </div>
+      <h1 class="mb-4">{{ caption }}</h1>
+      <PostList :posts="posts" />
     </div>
   </main>
 </template>
-
-<style lang="scss">
-.active {
-  color: #ff0000;
-}
-</style>
