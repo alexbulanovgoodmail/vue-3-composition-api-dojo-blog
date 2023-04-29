@@ -14,7 +14,7 @@ load()
 </script>
 
 <template>
-  <main class="py-8">
+  <main>
     <div class="container">
       <div v-if="error" class="nes-container is-error with-title">
         <p class="title">Error</p>

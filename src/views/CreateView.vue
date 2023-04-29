@@ -29,7 +29,7 @@ async function handleSubmit(params) {
 </script>
 
 <template>
-  <main class="py-8">
+  <main>
     <div class="container">
       <div class="create">
         <h1>Create</h1>

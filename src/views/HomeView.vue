@@ -9,10 +9,9 @@ load()
 </script>
 
 <template>
-  <main class="py-8">
+  <main>
     <div class="container">
       <div class="home">
-        <h1 class="mb-4">Home View</h1>
         <div v-if="posts.length === 0 && error === null">
           <Loader />
         </div>
