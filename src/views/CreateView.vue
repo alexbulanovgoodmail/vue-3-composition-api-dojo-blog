@@ -89,15 +89,17 @@ async function handleSubmit(params) {
 
   h1::after {
     content: '';
-    display: block;
     position: absolute;
     top: 0;
-    left: 0;
+    left: -16px;
+    box-sizing: content-box;
+    display: block;
     width: 100%;
     height: 100%;
+    padding-right: 32px;
     background-color: $color-17;
     z-index: -1;
-    transform: rotate(-3deg);
+    transform: rotate(-1deg);
   }
 }
 </style>
