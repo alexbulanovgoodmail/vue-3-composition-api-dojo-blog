@@ -15,6 +15,9 @@ const snippet = computed(() => {
 <template>
   <div class="nes-container with-title">
     <h2 class="title">{{ post.title }}</h2>
+    <div class="-mx-2 my-3">
+      <span v-for="(tag, index) in post.tags" :key="index" class="mx-2 text-xs">#{{ tag }}</span>
+    </div>
     <p>{{ snippet }}</p>
   </div>
 </template>
