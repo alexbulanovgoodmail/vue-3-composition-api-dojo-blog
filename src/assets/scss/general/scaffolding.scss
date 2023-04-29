@@ -11,8 +11,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: normal;
   line-height: 1.5;
-  color: #000000;
-  background-color: #ffffff;
+  color: $base-color;
+  background-color: $background-color;
 }
 
 #app {

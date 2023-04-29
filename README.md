@@ -33,3 +33,15 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### JSON Server (https://github.com/typicode/json-server)
+
+```sh
+npm install -g json-server
+```
+
+Start JSON Server
+
+```sh
+json-server --watch data/db.json
+```

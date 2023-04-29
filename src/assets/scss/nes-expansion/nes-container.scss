@@ -1,0 +1,6 @@
+.nes-container {
+  &.is-error {
+    color: map-get($error-colors, normal);
+    border-color: map-get($error-colors, normal);
+  }
+}

@@ -4,6 +4,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
+import 'nes.css/css/nes.min.css'
 import './assets/css/tailwind.css'
 import './assets/scss/main.scss'
 
