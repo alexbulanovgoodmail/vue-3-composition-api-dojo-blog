@@ -29,6 +29,16 @@
         "javascript"
       ],
       "id": 3
+    },
+    {
+      "title": "Это новая запись в блоге",
+      "body": "        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, vero omnis! Illo inventore\n        facere libero vel. Obcaecati cumque in veritatis ipsam totam voluptatum, repudiandae aperiam\n        tempore. Fugit, quasi. Earum nobis, magnam quos provident eos quod culpa ducimus velit ut,\n        vitae quibusdam, quisquam dicta quis in unde similique. Enim, dolores mollitia.",
+      "tags": [
+        "css",
+        "js",
+        "vue"
+      ],
+      "id": 4
     }
   ]
 }

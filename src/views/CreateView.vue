@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const title = ref('')
 const body = ref('')
@@ -25,6 +28,8 @@ async function handleSubmit(params) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(post)
   })
+
+  router.push({ name: 'HomeView' })
 }
 </script>
 
@@ -33,7 +38,6 @@ async function handleSubmit(params) {
     <div class="container">
       <div class="create">
         <h1>Create</h1>
-
         <form action="" @submit.prevent="handleSubmit">
           <div class="my-6 nes-field">
             <label for="title_field">Title: </label>
