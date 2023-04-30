@@ -1,14 +1,16 @@
 <script setup>
+import { useRoute } from 'vue-router'
 import getPost from '@/composables/getPost'
 import Loader from '@/components/Loader.vue'
 
+const route = useRoute()
 const props = defineProps({
   id: {
     type: Number,
     required: true
   }
 })
-const { post, error, load } = getPost(props.id)
+const { post, error, load } = getPost(route.params.id)
 
 load()
 </script>
