@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { projectFirestore } from '../firebase/config'
+import { projectFirestore, timestamp } from '../firebase/config'
 
 const router = useRouter()
 
@@ -21,7 +21,8 @@ async function handleSubmit(params) {
   const post = {
     title: title.value,
     body: body.value,
-    tags: tags.value
+    tags: tags.value,
+    createAt: timestamp()
   }
 
   await projectFirestore.collection('posts').add(post)
