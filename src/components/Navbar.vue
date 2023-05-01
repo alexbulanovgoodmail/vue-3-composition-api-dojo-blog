@@ -20,6 +20,14 @@
             >Create</RouterLink
           >
         </li>
+        <li class="mx-2 flex">
+          <RouterLink
+            :to="{ name: 'RealTime' }"
+            class="hover:no-underline hover:text-color-17 transition"
+            active-class="text-color-10 pointer-events-none"
+            >RealTime</RouterLink
+          >
+        </li>
       </ul>
     </nav>
   </div>

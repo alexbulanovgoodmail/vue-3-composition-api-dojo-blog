@@ -11,7 +11,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div v-for="(post, index) in props.posts" :key="index" class="my-6">
+  <div v-for="post in props.posts" :key="post.id" class="my-6">
     <SinglePost :post="post" />
   </div>
 </template>
