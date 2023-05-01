@@ -1,9 +1,11 @@
 <script setup>
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import getPost from '@/composables/getPost'
 import Loader from '@/components/Loader.vue'
+import { projectFirestore } from '../firebase/config'
 
 const route = useRoute()
+const router = useRouter()
 const props = defineProps({
   id: {
     type: String,
@@ -13,6 +15,12 @@ const props = defineProps({
 const { post, error, load } = getPost(route.params.id)
 
 load()
+
+async function handleDelete(params) {
+  await projectFirestore.collection('posts').doc(route.params.id).delete()
+
+  router.push({ name: 'HomeView' })
+}
 </script>
 
 <template>
@@ -22,10 +30,7 @@ load()
         <p class="title">Error</p>
         <p>{{ error }}</p>
       </div>
-      <div v-else-if="post === null && error === null">
-        <Loader />
-      </div>
-      <div v-else class="post">
+      <div v-if="post" class="post">
         <div class="mb-4">
           <h1>
             {{ post.title }}
@@ -34,6 +39,12 @@ load()
         <div class="my-4">
           <p>{{ post.body }}</p>
         </div>
+        <div class="my-4">
+          <button class="nes-btn is-error" type="button" @click="handleDelete">Delete Post</button>
+        </div>
+      </div>
+      <div v-else>
+        <Loader />
       </div>
     </div>
   </main>
