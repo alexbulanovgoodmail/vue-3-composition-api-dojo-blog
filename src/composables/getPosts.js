@@ -13,11 +13,6 @@ export default function (params) {
         ...doc.data(),
         id: doc.id
       }))
-      // const data = await fetch('http://localhost:3000/posts/')
-      // if (!data.ok) {
-      //   throw Error('no data available')
-      // }
-      // posts.value = await data.json()
     } catch (e) {
       error.value = e.message
     }

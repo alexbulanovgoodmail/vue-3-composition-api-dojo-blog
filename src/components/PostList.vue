@@ -8,17 +8,6 @@ const props = defineProps({
     required: true
   }
 })
-
-//
-onMounted(() => {
-  console.log('[onMounted]')
-})
-onUnmounted(() => {
-  console.log('[onUnmounted]')
-})
-onUpdated(() => {
-  console.log('[onUpdated]')
-})
 </script>
 
 <template>

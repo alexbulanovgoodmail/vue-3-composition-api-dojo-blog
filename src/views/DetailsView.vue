@@ -6,7 +6,7 @@ import Loader from '@/components/Loader.vue'
 const route = useRoute()
 const props = defineProps({
   id: {
-    type: Number,
+    type: String,
     required: true
   }
 })
@@ -22,7 +22,7 @@ load()
         <p class="title">Error</p>
         <p>{{ error }}</p>
       </div>
-      <div v-if="post === null && error === null">
+      <div v-else-if="post === null && error === null">
         <Loader />
       </div>
       <div v-else class="post">
